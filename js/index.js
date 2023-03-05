@@ -19,8 +19,6 @@ $randomPokemon.addEventListener('click', handleRandomPokemon)
 
 let pokemonSelected = null
 
-// handleRandomPokemon();
-
 async function handleSubmit(event){
     event.preventDefault();
     // $pokedex.classList.add('is-open')

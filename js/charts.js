@@ -1,9 +1,8 @@
 var ctx = document.getElementById('stats').getContext('2d')
 
-
 export function createRadarChart(stats){
 
-    const chart = new Chart(ctx, {
+    return new Chart(ctx, {
         type: 'radar',
         data: {
             labels: [
@@ -15,15 +14,8 @@ export function createRadarChart(stats){
               'Speed'
             ],
             datasets: [{
-            //   label: 'My First Dataset',
               data: stats,
               fill: true,
-            //   backgroundColor: 'rgba(255, 99, 132, 0.2)',
-            //   borderColor: 'rgb(255, 99, 132)',
-            //   pointBackgroundColor: 'rgb(255, 99, 132)',
-            //   pointBorderColor: '#fff',
-            //   pointHoverBackgroundColor: '#fff',
-            //   pointHoverBorderColor: 'rgb(255, 99, 132)',
               backgroundColor: 'rgba(255, 138, 101, 0.2)',
               borderColor: 'rgb(255, 138, 101)',
               pointBackgroundColor: 'rgb(255, 138, 101)',
@@ -73,6 +65,4 @@ export function createRadarChart(stats){
               }
         }
       });
-
-    return chart
 }
