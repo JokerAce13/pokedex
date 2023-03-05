@@ -1,0 +1,10 @@
+.actions {
+    display: grid;
+    grid-template-columns: 1fr 5.5rem;
+    grid-template-areas:
+    'variants variants'
+    'search navigation'
+    'description navigation';
+    gap: 1.5rem;
+    overflow: auto;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Space+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/index.css">
+  <!--Inicio - Configuración OpenGraph -->
+  <meta property="og:title" content="Pokedex" />
+  <meta property="og:description" content="Taller Pokedex" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://127.0.0.1:5500/index.html" />
+  <meta property="og:image" content="http://127.0.0.1:5500/design/Pokedex.jpg" />
+  <!--Fin - Configuración OpenGraph -->
+  <title>Pokédex</title>
+</head>
+<body>
+  <main class="pokedex" id="pokedex" tabindex="0">
+    <section class="pokedex-main" aria-label="Información general del Pokémon">
+      <div class="header-shadow">
+        <div class="header">
+          <span id="speech-light" class="light is-big is-sky"></span>
+          <span class="light is-pink"></span>
+          <span class="light is-yellow"></span>
+          <span class="light is-green"></span>
+        </div>
+      </div>
+      <div class="screen">
+        <div class="screen-border">
+          <div class="screen-safeArea" id="screen-safeArea">
+            <img src="./images/pokeball.png" height="100" width="100" alt="Imagen del Pokémon" id="pokemon-img">
+          </div>
+          <div class="screen-components">
+            <div class="screen-buttons">
+              <span class="screen-button"></span>
+              <span class="screen-button"></span>
+            </div>
+            <div class="screen-mic">
+              <img src="icons/mic.svg" alt="Icono del Microfono">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="actions">
+        <div class="variants">
+          <button id="random-pokemon" class="variant-button is-big" aria-label="Algo hay que poner"></button>
+          <button class="variant-button is-secondary" aria-label="Algo hay que poner"></button>
+          <button class="variant-button" aria-label="Algo hay que poner"></button>
+        </div>
+        <form role="search" class="search" id="form">
+          <input id="search-bar" type="text" name="id" placeholder="¿Quien es ese pokemon?" autocomplete="off">
+        </form>
+        <div class="description">
+          <p id="pokemon-description">Busca un pokémon para conocer todos sus características.</p>
+        </div>
+        <div class="navigation">
+          <button id="next-pokemon" class="navigation-right" aria-label="Siguiente Pokémon"></button>
+          <button id="prev-pokemon" class="navigation-left" aria-label="Pokémon Anterior"></button>
+          <button id="next-variant" class="navigation-down" aria-label="Siguiente Variante del Pokémon"></button>
+          <button id="prev-variant" class="navigation-up" aria-label="Variante Anterior del Pokémon"></button>
+        </div>
+      </div>
+    </section>
+    <!--Se utiliza div porque no tiene peso semantico y solo un componente estetico -->
+    <div class="cover-front">
+      front
+    </div>
+    <section class="cover-back" aria-label="Estadísticas del Pokémon">
+      <div class="stats">
+        <canvas id="stats" height="200" width="200"></canvas>
+      </div>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
+  <script src="./js/index.js" type="module"></script>
+</body>
+</html>
+
+
+
