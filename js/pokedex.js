@@ -2,6 +2,7 @@ import { getPokemon, getSpecies } from "./api.js";
 import { createRadarChart } from "./charts.js";
 
 const $pokemonImg = document.getElementById('pokemon-img')
+const $pokemonName = document.getElementById('pokemon-name')
 const $pokemonDescription = document.getElementById('pokemon-description')
 const $speechLight = document.getElementById('speech-light')
 
@@ -9,7 +10,8 @@ export function setImagen(imageUrl){
     $pokemonImg.src = imageUrl
 }
 
-function setDescription(description){
+function setDescription(name, description){
+    $pokemonName.textContent = name
     $pokemonDescription.textContent = description
 }
 
@@ -58,7 +60,7 @@ export async function setPokemon(id) {
     const pokemon = await findPokemon(id)
     loader(false)
     setImagen(pokemon.sprites[0])
-    setDescription(pokemon.description)
+    setDescription(pokemon.name, pokemon.description)
     speech(`${pokemon.name}. ${pokemon.description}`)
     if (currentChart instanceof Chart) {
         currentChart.destroy()
